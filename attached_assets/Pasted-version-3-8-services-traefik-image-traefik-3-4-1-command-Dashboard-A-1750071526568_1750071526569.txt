@@ -1,0 +1,81 @@
+version: "3.8"
+
+services:
+  traefik:
+    image: traefik:3.4.1
+    command:
+      # Dashboard/API
+      - "--api.dashboard=true"
+      - "--api.insecure=false"
+
+      # Entrypoints HTTP e HTTPS
+      - "--entrypoints.web.address=:80"
+      - "--entrypoints.web.http.redirections.entrypoint.to=websecure"
+      - "--entrypoints.web.http.redirections.entrypoint.scheme=https"
+      - "--entrypoints.web.http.redirections.entrypoint.permanent=true"
+      - "--entrypoints.websecure.address=:443"
+      - "--entrypoints.websecure.http.tls=true"
+
+      # ACME via TLS-ALPN (não precisamos do HTTP-01)
+      - "--certificatesresolvers.letsencryptresolver.acme.tlschallenge=true"
+      - "--certificatesresolvers.letsencryptresolver.acme.email=renato@famanegociosimobiliarios.com.br"
+      - "--certificatesresolvers.letsencryptresolver.acme.storage=/etc/traefik/letsencrypt/acme.json"
+
+      # Swarm provider (somente na rede pública)
+      - "--providers.swarm=true"
+      - "--providers.swarm.endpoint=unix:///var/run/docker.sock"
+      - "--providers.swarm.exposedbydefault=false"
+      - "--providers.swarm.network=network_public"
+
+      # Logs
+      - "--log.level=INFO"
+      - "--accesslog=true"
+      - "--accesslog.filepath=/var/log/traefik/access-log"
+
+    deploy:
+      placement:
+        constraints:
+          - node.role == manager
+      restart_policy:
+        condition: any
+        delay: 5s
+      labels:
+        # 1) Expor somente este serviço
+        - "traefik.enable=true"
+
+        # 2) Regra de roteamento: domínio + path
+        - "traefik.http.routers.traefik-dashboard.rule=Host(`traefik.famachat.com.br`) && (PathPrefix(`/dashboard`) || PathPrefix(`/api`))"
+        - "traefik.http.routers.traefik-dashboard.entrypoints=websecure"
+        - "traefik.http.routers.traefik-dashboard.tls=true"
+        - "traefik.http.routers.traefik-dashboard.tls.certresolver=letsencryptresolver"
+        - "traefik.http.routers.traefik-dashboard.service=api@internal"
+
+        # 3) Porta interna do backend (Swarm requer declaração)
+        - "traefik.http.services.traefik-dashboard.loadbalancer.server.port=8080"
+
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - vol_certificates:/etc/traefik/letsencrypt
+      - vol_traefik_logs:/var/log/traefik
+
+    ports:
+      - published: 80
+        target: 80
+      - published: 443
+        target: 443
+
+    networks:
+      - network_public
+
+volumes:
+  vol_certificates:
+    external: true
+    name: volume_swarm_certificates
+  vol_traefik_logs:
+    external: true
+    name: volume_swarm_traefik_logs
+
+networks:
+  network_public:
+    external: true
+    name: network_public

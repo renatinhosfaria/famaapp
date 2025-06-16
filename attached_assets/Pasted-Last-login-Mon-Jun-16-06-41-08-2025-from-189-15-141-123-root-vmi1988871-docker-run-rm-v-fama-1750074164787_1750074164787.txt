@@ -1,0 +1,75 @@
+Last login: Mon Jun 16 06:41:08 2025 from 189.15.141.123
+root@vmi1988871:~# docker run --rm -v fama-sistema_fama-source:/dest -v /tmp/fama-source:/src alpine sh -c "
+>   rm -rf /dest/* &&
+>   cp -r /src/* /dest/ &&
+>   ls -la /dest/"
+total 656
+drwxr-xr-x    6 root     root          4096 Jun 16 11:42 .
+drwxr-xr-x    1 root     root          4096 Jun 16 11:42 ..
+-rw-r--r--    1 root     root          5767 Jun 16 11:42 DEPLOY-INSTRUCTIONS.md
+-rw-r--r--    1 root     root          1415 Jun 16 11:42 DEPLOY-QUICK-GUIDE.md
+-rw-r--r--    1 root     root          2203 Jun 16 11:42 DEPLOY-SUMMARY.md
+-rw-r--r--    1 root     root          1352 Jun 16 11:42 Dockerfile
+-rw-r--r--    1 root     root         11258 Jun 16 11:42 PASSO-A-PASSO-DEPLOY.md
+-rw-r--r--    1 root     root          2488 Jun 16 11:42 README.md
+-rw-r--r--    1 root     root          3752 Jun 16 11:42 backup-script.sh
+drwxr-xr-x    3 root     root          4096 Jun 16 11:42 client
+-rw-r--r--    1 root     root          4935 Jun 16 11:42 deploy.sh
+-rw-r--r--    1 root     root          2475 Jun 16 11:42 docker-compose.yml
+-rw-r--r--    1 root     root           325 Jun 16 11:42 drizzle.config.ts
+-rw-r--r--    1 root     root           684 Jun 16 11:42 ecosystem.config.js
+-rw-r--r--    1 root     root          4477 Jun 16 11:42 migrate-data-to-vps.sh
+-rw-r--r--    1 root     root          3682 Jun 16 11:42 nginx-fama-sistema.conf
+-rw-r--r--    1 root     root        509197 Jun 16 11:42 package-lock.json
+-rw-r--r--    1 root     root          4685 Jun 16 11:42 package.json
+-rw-r--r--    1 root     root            80 Jun 16 11:42 postcss.config.js
+-rw-r--r--    1 root     root          3252 Jun 16 11:42 prepare-database.sh
+-rw-r--r--    1 root     root          3856 Jun 16 11:42 production.env
+drwxr-xr-x    2 root     root          4096 Jun 16 11:42 public
+-rw-r--r--    1 root     root           104 Jun 16 11:42 replit.nix
+-rw-r--r--    1 root     root          2426 Jun 16 11:42 run.mjs
+drwxr-xr-x   10 root     root          4096 Jun 16 11:42 server
+-rw-r--r--    1 root     root          7007 Jun 16 11:42 setup-vps.sh
+drwxr-xr-x    2 root     root          4096 Jun 16 11:42 shared
+-rw-r--r--    1 root     root          2963 Jun 16 11:42 tailwind.config.ts
+-rw-r--r--    1 root     root            99 Jun 16 11:42 theme.json
+-rw-r--r--    1 root     root          1131 Jun 16 11:42 traefik-example.yml
+-rw-r--r--    1 root     root           657 Jun 16 11:42 tsconfig.json
+-rw-r--r--    1 root     root          1069 Jun 16 11:42 vite.config.ts
+-rw-r--r--    1 root     root           334 Jun 16 11:42 vitest.config.ts
+root@vmi1988871:~# docker run --rm -v fama-sistema_fama-source:/app alpine ls -la /app/
+total 656
+drwxr-xr-x    6 root     root          4096 Jun 16 11:42 .
+drwxr-xr-x    1 root     root          4096 Jun 16 11:42 ..
+-rw-r--r--    1 root     root          5767 Jun 16 11:42 DEPLOY-INSTRUCTIONS.md
+-rw-r--r--    1 root     root          1415 Jun 16 11:42 DEPLOY-QUICK-GUIDE.md
+-rw-r--r--    1 root     root          2203 Jun 16 11:42 DEPLOY-SUMMARY.md
+-rw-r--r--    1 root     root          1352 Jun 16 11:42 Dockerfile
+-rw-r--r--    1 root     root         11258 Jun 16 11:42 PASSO-A-PASSO-DEPLOY.md
+-rw-r--r--    1 root     root          2488 Jun 16 11:42 README.md
+-rw-r--r--    1 root     root          3752 Jun 16 11:42 backup-script.sh
+drwxr-xr-x    3 root     root          4096 Jun 16 11:42 client
+-rw-r--r--    1 root     root          4935 Jun 16 11:42 deploy.sh
+-rw-r--r--    1 root     root          2475 Jun 16 11:42 docker-compose.yml
+-rw-r--r--    1 root     root           325 Jun 16 11:42 drizzle.config.ts
+-rw-r--r--    1 root     root           684 Jun 16 11:42 ecosystem.config.js
+-rw-r--r--    1 root     root          4477 Jun 16 11:42 migrate-data-to-vps.sh
+-rw-r--r--    1 root     root          3682 Jun 16 11:42 nginx-fama-sistema.conf
+-rw-r--r--    1 root     root        509197 Jun 16 11:42 package-lock.json
+-rw-r--r--    1 root     root          4685 Jun 16 11:42 package.json
+-rw-r--r--    1 root     root            80 Jun 16 11:42 postcss.config.js
+-rw-r--r--    1 root     root          3252 Jun 16 11:42 prepare-database.sh
+-rw-r--r--    1 root     root          3856 Jun 16 11:42 production.env
+drwxr-xr-x    2 root     root          4096 Jun 16 11:42 public
+-rw-r--r--    1 root     root           104 Jun 16 11:42 replit.nix
+-rw-r--r--    1 root     root          2426 Jun 16 11:42 run.mjs
+drwxr-xr-x   10 root     root          4096 Jun 16 11:42 server
+-rw-r--r--    1 root     root          7007 Jun 16 11:42 setup-vps.sh
+drwxr-xr-x    2 root     root          4096 Jun 16 11:42 shared
+-rw-r--r--    1 root     root          2963 Jun 16 11:42 tailwind.config.ts
+-rw-r--r--    1 root     root            99 Jun 16 11:42 theme.json
+-rw-r--r--    1 root     root          1131 Jun 16 11:42 traefik-example.yml
+-rw-r--r--    1 root     root           657 Jun 16 11:42 tsconfig.json
+-rw-r--r--    1 root     root          1069 Jun 16 11:42 vite.config.ts
+-rw-r--r--    1 root     root           334 Jun 16 11:42 vitest.config.ts
+root@vmi1988871:~#

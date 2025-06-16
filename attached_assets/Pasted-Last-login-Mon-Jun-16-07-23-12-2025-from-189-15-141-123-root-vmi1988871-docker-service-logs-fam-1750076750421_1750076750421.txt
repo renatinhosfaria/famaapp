@@ -1,0 +1,119 @@
+Last login: Mon Jun 16 07:23:12 2025 from 189.15.141.123
+root@vmi1988871:~# docker service logs fama-sistema_app --tail 50
+fama-sistema_app.1.dule3yy4uf2m@vmi1988871.contaboserver.net    |
+fama-sistema_app.1.d9zem7c8tmer@vmi1988871.contaboserver.net    |
+fama-sistema_app.1.dule3yy4uf2m@vmi1988871.contaboserver.net    | added 5 packages in 6s
+fama-sistema_app.1.d9zem7c8tmer@vmi1988871.contaboserver.net    | added 5 packages in 5s
+fama-sistema_app.1.uksfalwcvd5h@vmi1988871.contaboserver.net    |
+fama-sistema_app.1.dule3yy4uf2m@vmi1988871.contaboserver.net    |
+fama-sistema_app.1.uksfalwcvd5h@vmi1988871.contaboserver.net    | added 5 packages in 4s
+fama-sistema_app.1.dule3yy4uf2m@vmi1988871.contaboserver.net    | 2 packages are looking for funding
+fama-sistema_app.1.uksfalwcvd5h@vmi1988871.contaboserver.net    |
+fama-sistema_app.1.dule3yy4uf2m@vmi1988871.contaboserver.net    |   run `npm fund` for details
+fama-sistema_app.1.dule3yy4uf2m@vmi1988871.contaboserver.net    | npm notice
+fama-sistema_app.1.uksfalwcvd5h@vmi1988871.contaboserver.net    | 2 packages are looking for funding
+fama-sistema_app.1.dule3yy4uf2m@vmi1988871.contaboserver.net    | npm notice New major version of npm available! 10.8.2 -> 11.4.2
+fama-sistema_app.1.uksfalwcvd5h@vmi1988871.contaboserver.net    |   run `npm fund` for details
+fama-sistema_app.1.dule3yy4uf2m@vmi1988871.contaboserver.net    | npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.4.2
+fama-sistema_app.1.uksfalwcvd5h@vmi1988871.contaboserver.net    | npm notice
+fama-sistema_app.1.dule3yy4uf2m@vmi1988871.contaboserver.net    | npm notice To update run: npm install -g npm@11.4.2
+fama-sistema_app.1.uksfalwcvd5h@vmi1988871.contaboserver.net    | npm notice New major version of npm available! 10.8.2 -> 11.4.2
+fama-sistema_app.1.dule3yy4uf2m@vmi1988871.contaboserver.net    | npm notice
+fama-sistema_app.1.uksfalwcvd5h@vmi1988871.contaboserver.net    | npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.4.2
+fama-sistema_app.1.dule3yy4uf2m@vmi1988871.contaboserver.net    |
+fama-sistema_app.1.uksfalwcvd5h@vmi1988871.contaboserver.net    | npm notice To update run: npm install -g npm@11.4.2
+fama-sistema_app.1.uksfalwcvd5h@vmi1988871.contaboserver.net    | npm notice
+fama-sistema_app.1.uksfalwcvd5h@vmi1988871.contaboserver.net    |
+fama-sistema_app.1.uksfalwcvd5h@vmi1988871.contaboserver.net    | node:internal/process/esm_loader:40
+fama-sistema_app.1.dule3yy4uf2m@vmi1988871.contaboserver.net    | node:internal/process/esm_loader:40
+fama-sistema_app.1.dule3yy4uf2m@vmi1988871.contaboserver.net    |       internalBinding('errors').triggerUncaughtException(
+fama-sistema_app.1.uksfalwcvd5h@vmi1988871.contaboserver.net    |       internalBinding('errors').triggerUncaughtException(
+fama-sistema_app.1.dule3yy4uf2m@vmi1988871.contaboserver.net    |                                 ^
+fama-sistema_app.1.uksfalwcvd5h@vmi1988871.contaboserver.net    |                                 ^
+fama-sistema_app.1.uksfalwcvd5h@vmi1988871.contaboserver.net    | Error [ERR_MODULE_NOT_FOUND]: Cannot find package '@vitejs/plugin-react' imported from /app/vite.config.ts
+fama-sistema_app.1.dule3yy4uf2m@vmi1988871.contaboserver.net    | Error [ERR_MODULE_NOT_FOUND]: Cannot find package '@vitejs/plugin-react' imported from /app/vite.config.ts
+fama-sistema_app.1.dule3yy4uf2m@vmi1988871.contaboserver.net    |     at new NodeError (node:internal/errors:405:5)
+fama-sistema_app.1.uksfalwcvd5h@vmi1988871.contaboserver.net    |     at new NodeError (node:internal/errors:405:5)
+fama-sistema_app.1.uksfalwcvd5h@vmi1988871.contaboserver.net    |     at packageResolve (node:internal/modules/esm/resolve:916:9)
+fama-sistema_app.1.dule3yy4uf2m@vmi1988871.contaboserver.net    |     at packageResolve (node:internal/modules/esm/resolve:916:9)
+fama-sistema_app.1.dule3yy4uf2m@vmi1988871.contaboserver.net    |     at moduleResolve (node:internal/modules/esm/resolve:973:20)
+fama-sistema_app.1.d9zem7c8tmer@vmi1988871.contaboserver.net    |
+fama-sistema_app.1.dule3yy4uf2m@vmi1988871.contaboserver.net    |     at defaultResolve (node:internal/modules/esm/resolve:1206:11)
+fama-sistema_app.1.dule3yy4uf2m@vmi1988871.contaboserver.net    |     at nextResolve (node:internal/modules/esm/hooks:864:28)
+fama-sistema_app.1.d9zem7c8tmer@vmi1988871.contaboserver.net    | 2 packages are looking for funding
+fama-sistema_app.1.dule3yy4uf2m@vmi1988871.contaboserver.net    |     at resolveBase (file:///usr/local/lib/node_modules/tsx/dist/esm/index.mjs?1750076672199:2:3811)
+fama-sistema_app.1.d9zem7c8tmer@vmi1988871.contaboserver.net    |   run `npm fund` for details
+fama-sistema_app.1.dule3yy4uf2m@vmi1988871.contaboserver.net    |     at resolveDirectory (file:///usr/local/lib/node_modules/tsx/dist/esm/index.mjs?1750076672199:2:4310)
+fama-sistema_app.1.uksfalwcvd5h@vmi1988871.contaboserver.net    |     at moduleResolve (node:internal/modules/esm/resolve:973:20)
+fama-sistema_app.1.dule3yy4uf2m@vmi1988871.contaboserver.net    |     at resolveTsPaths (file:///usr/local/lib/node_modules/tsx/dist/esm/index.mjs?1750076672199:2:5051)
+fama-sistema_app.1.d9zem7c8tmer@vmi1988871.contaboserver.net    | npm notice
+fama-sistema_app.1.uksfalwcvd5h@vmi1988871.contaboserver.net    |     at defaultResolve (node:internal/modules/esm/resolve:1206:11)
+fama-sistema_app.1.dule3yy4uf2m@vmi1988871.contaboserver.net    |     at async resolve (file:///usr/local/lib/node_modules/tsx/dist/esm/index.mjs?1750076672199:2:5422)
+fama-sistema_app.1.d9zem7c8tmer@vmi1988871.contaboserver.net    | npm notice New major version of npm available! 10.8.2 -> 11.4.2
+fama-sistema_app.1.uksfalwcvd5h@vmi1988871.contaboserver.net    |     at nextResolve (node:internal/modules/esm/hooks:864:28)
+fama-sistema_app.1.dule3yy4uf2m@vmi1988871.contaboserver.net    |     at async nextResolve (node:internal/modules/esm/hooks:864:22) {
+fama-sistema_app.1.d9zem7c8tmer@vmi1988871.contaboserver.net    | npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.4.2
+fama-sistema_app.1.dule3yy4uf2m@vmi1988871.contaboserver.net    |   code: 'ERR_MODULE_NOT_FOUND'
+fama-sistema_app.1.uksfalwcvd5h@vmi1988871.contaboserver.net    |     at resolveBase (file:///usr/local/lib/node_modules/tsx/dist/esm/index.mjs?1750076689405:2:3811)
+fama-sistema_app.1.d9zem7c8tmer@vmi1988871.contaboserver.net    | npm notice To update run: npm install -g npm@11.4.2
+fama-sistema_app.1.dule3yy4uf2m@vmi1988871.contaboserver.net    | }
+fama-sistema_app.1.uksfalwcvd5h@vmi1988871.contaboserver.net    |     at resolveDirectory (file:///usr/local/lib/node_modules/tsx/dist/esm/index.mjs?1750076689405:2:4310)
+fama-sistema_app.1.d9zem7c8tmer@vmi1988871.contaboserver.net    | npm notice
+fama-sistema_app.1.dule3yy4uf2m@vmi1988871.contaboserver.net    |
+fama-sistema_app.1.uksfalwcvd5h@vmi1988871.contaboserver.net    |     at resolveTsPaths (file:///usr/local/lib/node_modules/tsx/dist/esm/index.mjs?1750076689405:2:5051)
+fama-sistema_app.1.d9zem7c8tmer@vmi1988871.contaboserver.net    |
+fama-sistema_app.1.dule3yy4uf2m@vmi1988871.contaboserver.net    | Node.js v18.20.8
+fama-sistema_app.1.d9zem7c8tmer@vmi1988871.contaboserver.net    | node:internal/process/esm_loader:40
+fama-sistema_app.1.uksfalwcvd5h@vmi1988871.contaboserver.net    |     at async resolve (file:///usr/local/lib/node_modules/tsx/dist/esm/index.mjs?1750076689405:2:5422)
+fama-sistema_app.1.d9zem7c8tmer@vmi1988871.contaboserver.net    |       internalBinding('errors').triggerUncaughtException(
+fama-sistema_app.1.d9zem7c8tmer@vmi1988871.contaboserver.net    |                                 ^
+fama-sistema_app.1.uksfalwcvd5h@vmi1988871.contaboserver.net    |     at async nextResolve (node:internal/modules/esm/hooks:864:22) {
+fama-sistema_app.1.uksfalwcvd5h@vmi1988871.contaboserver.net    |   code: 'ERR_MODULE_NOT_FOUND'
+fama-sistema_app.1.d9zem7c8tmer@vmi1988871.contaboserver.net    | Error [ERR_MODULE_NOT_FOUND]: Cannot find package '@vitejs/plugin-react' imported from /app/vite.config.ts
+fama-sistema_app.1.uksfalwcvd5h@vmi1988871.contaboserver.net    | }
+fama-sistema_app.1.d9zem7c8tmer@vmi1988871.contaboserver.net    |     at new NodeError (node:internal/errors:405:5)
+fama-sistema_app.1.d9zem7c8tmer@vmi1988871.contaboserver.net    |     at packageResolve (node:internal/modules/esm/resolve:916:9)
+fama-sistema_app.1.d9zem7c8tmer@vmi1988871.contaboserver.net    |     at moduleResolve (node:internal/modules/esm/resolve:973:20)
+fama-sistema_app.1.d9zem7c8tmer@vmi1988871.contaboserver.net    |     at defaultResolve (node:internal/modules/esm/resolve:1206:11)
+fama-sistema_app.1.d9zem7c8tmer@vmi1988871.contaboserver.net    |     at nextResolve (node:internal/modules/esm/hooks:864:28)
+fama-sistema_app.1.d9zem7c8tmer@vmi1988871.contaboserver.net    |     at resolveBase (file:///usr/local/lib/node_modules/tsx/dist/esm/index.mjs?1750076728847:2:3811)
+fama-sistema_app.1.d9zem7c8tmer@vmi1988871.contaboserver.net    |     at resolveDirectory (file:///usr/local/lib/node_modules/tsx/dist/esm/index.mjs?1750076728847:2:4310)
+fama-sistema_app.1.d9zem7c8tmer@vmi1988871.contaboserver.net    |     at resolveTsPaths (file:///usr/local/lib/node_modules/tsx/dist/esm/index.mjs?1750076728847:2:5051)
+fama-sistema_app.1.uksfalwcvd5h@vmi1988871.contaboserver.net    |
+fama-sistema_app.1.d9zem7c8tmer@vmi1988871.contaboserver.net    |     at async resolve (file:///usr/local/lib/node_modules/tsx/dist/esm/index.mjs?1750076728847:2:5422)
+fama-sistema_app.1.uksfalwcvd5h@vmi1988871.contaboserver.net    | Node.js v18.20.8
+fama-sistema_app.1.d9zem7c8tmer@vmi1988871.contaboserver.net    |     at async nextResolve (node:internal/modules/esm/hooks:864:22) {
+fama-sistema_app.1.d9zem7c8tmer@vmi1988871.contaboserver.net    |   code: 'ERR_MODULE_NOT_FOUND'
+fama-sistema_app.1.d9zem7c8tmer@vmi1988871.contaboserver.net    | }
+fama-sistema_app.1.d9zem7c8tmer@vmi1988871.contaboserver.net    |
+fama-sistema_app.1.d9zem7c8tmer@vmi1988871.contaboserver.net    | Node.js v18.20.8
+fama-sistema_app.1.7gskrsejw6s3@vmi1988871.contaboserver.net    | npm notice
+fama-sistema_app.1.7gskrsejw6s3@vmi1988871.contaboserver.net    | npm notice New major version of npm available! 10.8.2 -> 11.4.2
+fama-sistema_app.1.7gskrsejw6s3@vmi1988871.contaboserver.net    | npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.4.2
+fama-sistema_app.1.7gskrsejw6s3@vmi1988871.contaboserver.net    | npm notice To update run: npm install -g npm@11.4.2
+fama-sistema_app.1.7gskrsejw6s3@vmi1988871.contaboserver.net    | npm notice
+fama-sistema_app.1.7gskrsejw6s3@vmi1988871.contaboserver.net    |
+fama-sistema_app.1.7gskrsejw6s3@vmi1988871.contaboserver.net    | added 5 packages in 4s
+fama-sistema_app.1.7gskrsejw6s3@vmi1988871.contaboserver.net    |
+fama-sistema_app.1.7gskrsejw6s3@vmi1988871.contaboserver.net    | 2 packages are looking for funding
+fama-sistema_app.1.7gskrsejw6s3@vmi1988871.contaboserver.net    |   run `npm fund` for details
+fama-sistema_app.1.7gskrsejw6s3@vmi1988871.contaboserver.net    |
+fama-sistema_app.1.7gskrsejw6s3@vmi1988871.contaboserver.net    | node:internal/process/esm_loader:40
+fama-sistema_app.1.7gskrsejw6s3@vmi1988871.contaboserver.net    |       internalBinding('errors').triggerUncaughtException(
+fama-sistema_app.1.7gskrsejw6s3@vmi1988871.contaboserver.net    |                                 ^
+fama-sistema_app.1.7gskrsejw6s3@vmi1988871.contaboserver.net    | Error [ERR_MODULE_NOT_FOUND]: Cannot find package '@vitejs/plugin-react' imported from /app/vite.config.ts
+fama-sistema_app.1.7gskrsejw6s3@vmi1988871.contaboserver.net    |     at new NodeError (node:internal/errors:405:5)
+fama-sistema_app.1.7gskrsejw6s3@vmi1988871.contaboserver.net    |     at packageResolve (node:internal/modules/esm/resolve:916:9)
+fama-sistema_app.1.7gskrsejw6s3@vmi1988871.contaboserver.net    |     at moduleResolve (node:internal/modules/esm/resolve:973:20)
+fama-sistema_app.1.7gskrsejw6s3@vmi1988871.contaboserver.net    |     at defaultResolve (node:internal/modules/esm/resolve:1206:11)
+fama-sistema_app.1.7gskrsejw6s3@vmi1988871.contaboserver.net    |     at nextResolve (node:internal/modules/esm/hooks:864:28)
+fama-sistema_app.1.7gskrsejw6s3@vmi1988871.contaboserver.net    |     at resolveBase (file:///usr/local/lib/node_modules/tsx/dist/esm/index.mjs?1750076711580:2:3811)
+fama-sistema_app.1.7gskrsejw6s3@vmi1988871.contaboserver.net    |     at resolveDirectory (file:///usr/local/lib/node_modules/tsx/dist/esm/index.mjs?1750076711580:2:4310)
+fama-sistema_app.1.7gskrsejw6s3@vmi1988871.contaboserver.net    |     at resolveTsPaths (file:///usr/local/lib/node_modules/tsx/dist/esm/index.mjs?1750076711580:2:5051)
+fama-sistema_app.1.7gskrsejw6s3@vmi1988871.contaboserver.net    |     at async resolve (file:///usr/local/lib/node_modules/tsx/dist/esm/index.mjs?1750076711580:2:5422)
+fama-sistema_app.1.7gskrsejw6s3@vmi1988871.contaboserver.net    |     at async nextResolve (node:internal/modules/esm/hooks:864:22) {
+fama-sistema_app.1.7gskrsejw6s3@vmi1988871.contaboserver.net    |   code: 'ERR_MODULE_NOT_FOUND'
+fama-sistema_app.1.7gskrsejw6s3@vmi1988871.contaboserver.net    | }
+fama-sistema_app.1.7gskrsejw6s3@vmi1988871.contaboserver.net    |
+fama-sistema_app.1.7gskrsejw6s3@vmi1988871.contaboserver.net    | Node.js v18.20.8
+root@vmi1988871:~#

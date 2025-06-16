@@ -1,0 +1,647 @@
+~/workspace$ rm -rf .git
+~/workspace$ git init
+git branch -M main
+Initialized empty Git repository in /home/runner/workspace/.git/
+~/workspace$ git remote add origin https://github.com/renatinhosfaria/famaapp.git
+~/workspace$ cat > .gitignore << 'EOF'
+node_modules/
+uploads/
+.env
+*.log
+dist/
+build/
+.DS_Store
+attached_assets/
+*.tmp
+.config/
+.cache/
+.replit*
+EOF
+~/workspace$ git add .gitignore
+git add client/ server/ shared/ public/
+git add package*.json
+git add *.ts *.js *.md
+git add docker-compose.yml Dockerfile production.env
+git add drizzle.config.ts tailwind.config.ts vite.config.ts
+git add postcss.config.js tsconfig.json
+git add *.sh
+~/workspace$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+    new file:   .gitignore
+    new file:   DEPLOY-INSTRUCTIONS.md
+    new file:   DEPLOY-QUICK-GUIDE.md
+    new file:   DEPLOY-SUMMARY.md
+    new file:   Dockerfile
+    new file:   PASSO-A-PASSO-DEPLOY.md
+    new file:   README.md
+    new file:   backup-script.sh
+    new file:   client/index.html
+    new file:   client/src/App.tsx
+    new file:   client/src/components/ConfirmarExclusaoModal.tsx
+    new file:   client/src/components/DetalhesConstrutoraModal.tsx
+    new file:   client/src/components/NovoEmpreendimentoForm.tsx
+    new file:   client/src/components/NovoImovelModal.tsx
+    new file:   client/src/components/NovoProprietarioModal.tsx
+    new file:   client/src/components/atendimentos/media-upload.tsx
+    new file:   client/src/components/clientes/agendamento-dialog.tsx
+    new file:   client/src/components/clientes/appointment-edit-dialog.tsx
+    new file:   client/src/components/clientes/cliente-card.tsx
+    new file:   client/src/components/clientes/cliente-note-dialog.tsx
+    new file:   client/src/components/clientes/cliente-note-edit-dialog.tsx
+    new file:   client/src/components/clientes/create-cliente-dialog.tsx
+    new file:   client/src/components/clientes/kanban-board-central.tsx
+    new file:   client/src/components/clientes/kanban-board.tsx
+    new file:   client/src/components/clientes/kanban-column.tsx
+    new file:   client/src/components/clientes/profile-avatar.tsx
+    new file:   client/src/components/clientes/sale-edit-dialog.tsx
+    new file:   client/src/components/clientes/strict-mode-compat.tsx
+    new file:   client/src/components/clientes/venda-dialog.tsx
+    new file:   client/src/components/clientes/visit-edit-dialog.tsx
+    new file:   client/src/components/clientes/visita-dialog.tsx
+    new file:   client/src/components/custom/currency-input.tsx
+    new file:   client/src/components/daily-content.tsx
+    new file:   client/src/components/dashboard/atendimento-performance-table.tsx
+    new file:   client/src/components/dashboard/conversion-chart.tsx
+    new file:   client/src/components/dashboard/metric-card.tsx
+    new file:   client/src/components/dashboard/metrics-grid.tsx
+    new file:   client/src/components/dashboard/performance-chart.tsx
+    new file:   client/src/components/dashboard/performance-ranking.tsx
+    new file:   client/src/components/dashboard/period-filter.tsx
+    new file:   client/src/components/dashboard/recent-clientes.tsx
+    new file:   client/src/components/dashboard/role-dashboards.tsx
+    new file:   client/src/components/dashboard/upcoming-appointments.tsx
+    new file:   client/src/components/dashboard/user-filter.tsx
+    new file:   client/src/components/dashboard/users-performance-table.tsx
+    new file:   client/src/components/dashboard/vendas-performance-table.tsx
+    new file:   client/src/components/layout/header.tsx
+    new file:   client/src/components/layout/layout.tsx
+    new file:   client/src/components/layout/mobile-navigation.tsx
+    new file:   client/src/components/layout/sidebar.tsx
+    new file:   client/src/components/ui/accordion.tsx
+    new file:   client/src/components/ui/alert-dialog.tsx
+    new file:   client/src/components/ui/alert.tsx
+    new file:   client/src/components/ui/aspect-ratio.tsx
+    new file:   client/src/components/ui/avatar.tsx
+    new file:   client/src/components/ui/badge.tsx
+    new file:   client/src/components/ui/breadcrumb.tsx
+    new file:   client/src/components/ui/button-section.tsx
+    new file:   client/src/components/ui/button.tsx
+    new file:   client/src/components/ui/calendar.tsx
+    new file:   client/src/components/ui/card.tsx
+    new file:   client/src/components/ui/carousel.tsx
+    new file:   client/src/components/ui/chart.tsx
+    new file:   client/src/components/ui/checkbox.tsx
+    new file:   client/src/components/ui/collapsible.tsx
+    new file:   client/src/components/ui/command.tsx
+    new file:   client/src/components/ui/context-menu.tsx
+    new file:   client/src/components/ui/dialog.tsx
+    new file:   client/src/components/ui/drawer.tsx
+    new file:   client/src/components/ui/dropdown-menu.tsx
+    new file:   client/src/components/ui/form.tsx
+    new file:   client/src/components/ui/hover-card.tsx
+    new file:   client/src/components/ui/input-otp.tsx
+    new file:   client/src/components/ui/input.tsx
+    new file:   client/src/components/ui/label.tsx
+    new file:   client/src/components/ui/menubar.tsx
+    new file:   client/src/components/ui/navigation-menu.tsx
+    new file:   client/src/components/ui/pagination.tsx
+    new file:   client/src/components/ui/phone-input.tsx
+    new file:   client/src/components/ui/popover.tsx
+    new file:   client/src/components/ui/progress.tsx
+    new file:   client/src/components/ui/radio-group.tsx
+    new file:   client/src/components/ui/resizable.tsx
+    new file:   client/src/components/ui/scroll-area.tsx
+    new file:   client/src/components/ui/select.tsx
+    new file:   client/src/components/ui/separator.tsx
+    new file:   client/src/components/ui/sheet.tsx
+    new file:   client/src/components/ui/sidebar.tsx
+    new file:   client/src/components/ui/skeleton.tsx
+    new file:   client/src/components/ui/slider.tsx
+    new file:   client/src/components/ui/switch.tsx
+    new file:   client/src/components/ui/table.tsx
+    new file:   client/src/components/ui/tabs.tsx
+    new file:   client/src/components/ui/textarea.tsx
+    new file:   client/src/components/ui/toast.tsx
+    new file:   client/src/components/ui/toaster.tsx
+    new file:   client/src/components/ui/toggle-group.tsx
+    new file:   client/src/components/ui/toggle.tsx
+    new file:   client/src/components/ui/tooltip.tsx
+    new file:   client/src/components/ui/use-toast.ts
+    new file:   client/src/components/whatsapp/create-instance-dialog.tsx
+    new file:   client/src/components/whatsapp/fetch-photos-dialog.tsx
+    new file:   client/src/components/whatsapp/fetch-profile-dialog.tsx
+    new file:   client/src/components/whatsapp/fetch-single-profile-dialog.tsx
+    new file:   client/src/components/whatsapp/fetch-single-profile-picture.tsx
+    new file:   client/src/components/whatsapp/instance-buttons.tsx
+    new file:   client/src/components/whatsapp/qrcode-dialog.tsx
+    new file:   client/src/components/whatsapp/send-message-dialog.tsx
+    new file:   client/src/components/whatsapp/sequential-profile-pictures-dialog.fixed.tsx
+    new file:   client/src/components/whatsapp/sequential-profile-pictures-dialog.tsx
+    new file:   client/src/components/whatsapp/sequential-validation-dialog.tsx
+    new file:   client/src/components/whatsapp/validate-numbers-dialog.tsx
+    new file:   client/src/hooks/use-auth.tsx
+    new file:   client/src/hooks/use-daily-content.ts
+    new file:   client/src/hooks/use-dashboard-store.ts
+    new file:   client/src/hooks/use-debounce.ts
+    new file:   client/src/hooks/use-imoveis.ts
+    new file:   client/src/hooks/use-local-storage.ts
+    new file:   client/src/hooks/use-metas.ts
+    new file:   client/src/hooks/use-mobile.tsx
+    new file:   client/src/hooks/use-proprietarios.ts
+    new file:   client/src/hooks/use-reports-store.ts
+    new file:   client/src/hooks/use-toast.ts
+    new file:   client/src/index.css
+    new file:   client/src/lib/api.ts
+    new file:   client/src/lib/appointment-utils.ts
+    new file:   client/src/lib/date-utils.ts
+    new file:   client/src/lib/formatters.ts
+    new file:   client/src/lib/queryClient.ts
+    new file:   client/src/lib/utils.ts
+    new file:   client/src/main.tsx
+    new file:   client/src/pages/login.tsx
+    new file:   client/src/pages/modulos/central de atendimento/clientes-central.tsx
+    new file:   client/src/pages/modulos/central de atendimento/dashboard-central.tsx
+    new file:   client/src/pages/modulos/gestao/Metas.tsx
+    new file:   client/src/pages/modulos/gestao/clientes.tsx
+    new file:   client/src/pages/modulos/gestao/dashboard.tsx
+    new file:   client/src/pages/modulos/gestao/facebook.tsx
+    new file:   client/src/pages/modulos/gestao/leads.tsx
+    new file:   client/src/pages/modulos/gestao/profile-tab.tsx
+    new file:   client/src/pages/modulos/gestao/usuarios.tsx
+    new file:   client/src/pages/modulos/gestao/webhook-footer-update.txt
+    new file:   client/src/pages/modulos/gestao/webhook-implementation.tsx
+    new file:   client/src/pages/modulos/gestao/whatsapp.tsx
+    new file:   client/src/pages/modulos/marketing/clientes-marketing.tsx
+    new file:   client/src/pages/modulos/marketing/dashboard-marketing.tsx
+    new file:   client/src/pages/modulos/shared/Imoveis.tsx
+    new file:   client/src/pages/modulos/shared/[id].tsx
+    new file:   client/src/pages/modulos/shared/agenda.tsx
+    new file:   client/src/pages/modulos/shared/cliente-details.tsx
+    new file:   client/src/pages/modulos/shared/empreendimentos.tsx
+    new file:   client/src/pages/modulos/shared/proprietarios.tsx
+    new file:   client/src/pages/modulos/vendas/clientes-vendas.tsx
+    new file:   client/src/pages/modulos/vendas/dashboard-vendas.tsx
+    new file:   client/src/pages/not-found.tsx
+    new file:   client/src/pages/reports.tsx
+    new file:   client/src/services/geocoding.ts
+    new file:   client/src/styles/carousel.css
+    new file:   deploy.sh
+    new file:   docker-compose.yml
+    new file:   drizzle.config.ts
+    new file:   ecosystem.config.js
+    new file:   migrate-data-to-vps.sh
+    new file:   package-lock.json
+    new file:   package.json
+    new file:   postcss.config.js
+    new file:   prepare-database.sh
+    new file:   production.env
+    new file:   public/placeholder-user.png
+    new file:   public/teste-apartamento.html
+    new file:   server/constants/deprecatedFunctions.ts
+    new file:   server/constants/errorMessages.ts
+    new file:   server/database.ts
+    new file:   server/direct-cascade-fix.ts
+    new file:   server/index.ts
+    new file:   server/middleware/auth.ts
+    new file:   server/middleware/error-handler.ts
+    new file:   server/middleware/mock-auth.ts
+    new file:   server/middlewares/auth.ts
+    new file:   server/migrate.ts
+    new file:   server/migrations/20240320000000_create_metas_table.sql
+    new file:   server/migrations/20240515000000_add_development_name_column.sql
+    new file:   server/migrations/add-address-to-appointments.ts
+    new file:   server/migrations/add-automacao-leads-table.ts
+    new file:   server/migrations/add-broker-id-to-appointments.ts
+    new file:   server/migrations/add-broker-id-to-clientes.ts
+    new file:   server/migrations/add-cascade-delete-to-users.ts
+    new file:   server/migrations/add-cascade-sla-config.ts
+    new file:   server/migrations/add-cliente-notes-table.ts
+    new file:   server/migrations/add-cliente-source-fields.ts
+    new file:   server/migrations/add-cpf-to-clientes.ts
+    new file:   server/migrations/add-development-name-to-sales.ts
+    new file:   server/migrations/add-facebook-config-table.ts
+    new file:   server/migrations/add-imoveis-fields.ts
+    new file:   server/migrations/add-is-primary-to-whatsapp.ts
+    new file:   server/migrations/add-profile-pic-to-clientes.ts
+    new file:   server/migrations/add-recurring-lead-columns.ts
+    new file:   server/migrations/add-sistema-leads-cascata-table.ts
+    new file:   server/migrations/add-sistema-leads-table.ts
+    new file:   server/migrations/add-updated-at-column.ts
+    new file:   server/migrations/add-updated-at-to-visits.ts
+    new file:   server/migrations/add-visit-detail-fields.ts
+    new file:   server/migrations/add-whatsapp-remote-jid.ts
+    new file:   server/migrations/add-whatsapp-tables.ts
+    new file:   server/migrations/add_broker_assigned_to_columns.ts
+    new file:   server/migrations/add_details_to_sales.ts
+    new file:   server/migrations/index.ts
+    new file:   server/migrations/remove-enrichment-columns.ts
+    new file:   server/migrations/remove-more-automation-columns.ts
+    new file:   server/migrations/remove-unused-columns-from-automation.ts
+    new file:   server/migrations/remove-whatsapp-columns.ts
+    new file:   server/migrations/rename-leads-to-clientes.ts
+    new file:   server/migrations/update-schema-structure.ts
+    new file:   server/models/apartamentos-schema.ts
+    new file:   server/models/apartamentos.ts
+    new file:   server/models/daily-content.ts
+    new file:   server/models/empreendimentos-schema.ts
+    new file:   server/models/empreendimentos.ts
+    new file:   server/models/imoveis-novo.ts
+    new file:   server/models/imoveis-schema.ts
+    new file:   server/models/imoveis.ts
+    new file:   server/models/proprietarios.ts
+    new file:   server/models/sistema_users_horarios.ts
+    new file:   server/performance-metrics.ts
+    new file:   server/pg-storage.ts
+    new file:   server/remove-leads-table.ts
+    new file:   server/routes.ts
+    new file:   server/routes/admin-users.ts
+    new file:   server/routes/apartamentos-novo.ts
+    new file:   server/routes/apartamentos.ts
+    new file:   server/routes/appointments.ts
+    new file:   server/routes/auth.ts
+    new file:   server/routes/automation.ts
+    new file:   server/routes/clientes.ts
+    new file:   server/routes/dashboard.ts
+    new file:   server/routes/empreendimentos-page.ts
+    new file:   server/routes/empreendimentos.ts
+    new file:   server/routes/facebook.ts
+    new file:   server/routes/horarios-usuario.ts
+    new file:   server/routes/image-upload.ts
+    new file:   server/routes/imoveis-novo.ts
+    new file:   server/routes/imoveis.ts
+    new file:   server/routes/leads.ts
+    new file:   server/routes/metas-register.ts
+    new file:   server/routes/metas.ts
+    new file:   server/routes/openai.ts
+    new file:   server/routes/proprietarios.ts
+    new file:   server/routes/sequential-validation.ts
+    new file:   server/routes/sla-cascata.ts
+    new file:   server/routes/test-lead-distribution.ts
+    new file:   server/routes/uploads.ts
+    new file:   server/routes/users.ts
+    new file:   server/routes/whatsapp.ts
+    new file:   server/routes/whatsapp.ts.bak
+    new file:   server/run-add-recurring-lead-columns.ts
+    new file:   server/run-automacao-leads-migration.ts
+    new file:   server/run-broker-assigned-to-columns.ts
+    new file:   server/run-cascade-migration.ts
+    new file:   server/run-cliente-fields-migration.ts
+    new file:   server/run-cliente-notes-migration.ts
+    new file:   server/run-development-name-migration.ts
+    new file:   server/run-direct-migration.ts
+    new file:   server/run-migrations.ts
+    new file:   server/services/api-queue.ts
+    new file:   server/services/automation-config.service.ts
+    new file:   server/services/facebook-lead.service.ts
+    new file:   server/services/facebook-subscription.service.ts
+    new file:   server/services/image-upload.ts
+    new file:   server/services/lead-automation.service.ts
+    new file:   server/services/lead-automation.service.ts.bak
+    new file:   server/services/metas.service.ts
+    new file:   server/services/openai.service.ts
+    new file:   server/services/sequential-validation.ts
+    new file:   server/services/sla-cascata-simple.service.ts
+    new file:   server/services/whatsapp-api.ts
+    new file:   server/services/whatsapp-profile-pic.ts
+    new file:   server/services/whatsapp-validation.ts
+    new file:   server/set-null-fix.ts
+    new file:   server/storage.ts
+    new file:   server/utils.ts
+    new file:   server/utils/cache.ts
+    new file:   server/utils/date-utils.ts
+    new file:   server/utils/index.ts
+    new file:   server/utils/logger.ts
+    new file:   server/utils/performance-cache.ts
+    new file:   server/utils/test-number.ts
+    new file:   server/utils/validators.ts
+    new file:   server/vite.ts
+    new file:   setup-vps.sh
+    new file:   shared/schema.ts
+    new file:   tailwind.config.ts
+    new file:   tsconfig.json
+    new file:   vite.config.ts
+    new file:   vitest.config.ts
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+    .eslintrc.json
+    .github/
+    nginx-fama-sistema.conf
+    replit.nix
+    run.mjs
+    theme.json
+    traefik-example.yml
+
+~/workspace$ git commit -m "FAMA Sistema - Projeto completo"
+[main (root-commit) cd69748] FAMA Sistema - Projeto completo
+ 294 files changed, 87964 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 DEPLOY-INSTRUCTIONS.md
+ create mode 100644 DEPLOY-QUICK-GUIDE.md
+ create mode 100644 DEPLOY-SUMMARY.md
+ create mode 100644 Dockerfile
+ create mode 100644 PASSO-A-PASSO-DEPLOY.md
+ create mode 100644 README.md
+ create mode 100644 backup-script.sh
+ create mode 100644 client/index.html
+ create mode 100644 client/src/App.tsx
+ create mode 100644 client/src/components/ConfirmarExclusaoModal.tsx
+ create mode 100644 client/src/components/DetalhesConstrutoraModal.tsx
+ create mode 100644 client/src/components/NovoEmpreendimentoForm.tsx
+ create mode 100644 client/src/components/NovoImovelModal.tsx
+ create mode 100644 client/src/components/NovoProprietarioModal.tsx
+ create mode 100644 client/src/components/atendimentos/media-upload.tsx
+ create mode 100644 client/src/components/clientes/agendamento-dialog.tsx
+ create mode 100644 client/src/components/clientes/appointment-edit-dialog.tsx
+ create mode 100644 client/src/components/clientes/cliente-card.tsx
+ create mode 100644 client/src/components/clientes/cliente-note-dialog.tsx
+ create mode 100644 client/src/components/clientes/cliente-note-edit-dialog.tsx
+ create mode 100644 client/src/components/clientes/create-cliente-dialog.tsx
+ create mode 100644 client/src/components/clientes/kanban-board-central.tsx
+ create mode 100644 client/src/components/clientes/kanban-board.tsx
+ create mode 100644 client/src/components/clientes/kanban-column.tsx
+ create mode 100644 client/src/components/clientes/profile-avatar.tsx
+ create mode 100644 client/src/components/clientes/sale-edit-dialog.tsx
+ create mode 100644 client/src/components/clientes/strict-mode-compat.tsx
+ create mode 100644 client/src/components/clientes/venda-dialog.tsx
+ create mode 100644 client/src/components/clientes/visit-edit-dialog.tsx
+ create mode 100644 client/src/components/clientes/visita-dialog.tsx
+ create mode 100644 client/src/components/custom/currency-input.tsx
+ create mode 100644 client/src/components/daily-content.tsx
+ create mode 100644 client/src/components/dashboard/atendimento-performance-table.tsx
+ create mode 100644 client/src/components/dashboard/conversion-chart.tsx
+ create mode 100644 client/src/components/dashboard/metric-card.tsx
+ create mode 100644 client/src/components/dashboard/metrics-grid.tsx
+ create mode 100644 client/src/components/dashboard/performance-chart.tsx
+ create mode 100644 client/src/components/dashboard/performance-ranking.tsx
+ create mode 100644 client/src/components/dashboard/period-filter.tsx
+ create mode 100644 client/src/components/dashboard/recent-clientes.tsx
+ create mode 100644 client/src/components/dashboard/role-dashboards.tsx
+ create mode 100644 client/src/components/dashboard/upcoming-appointments.tsx
+ create mode 100644 client/src/components/dashboard/user-filter.tsx
+ create mode 100644 client/src/components/dashboard/users-performance-table.tsx
+ create mode 100644 client/src/components/dashboard/vendas-performance-table.tsx
+ create mode 100644 client/src/components/layout/header.tsx
+ create mode 100644 client/src/components/layout/layout.tsx
+ create mode 100644 client/src/components/layout/mobile-navigation.tsx
+ create mode 100644 client/src/components/layout/sidebar.tsx
+ create mode 100644 client/src/components/ui/accordion.tsx
+ create mode 100644 client/src/components/ui/alert-dialog.tsx
+ create mode 100644 client/src/components/ui/alert.tsx
+ create mode 100644 client/src/components/ui/aspect-ratio.tsx
+ create mode 100644 client/src/components/ui/avatar.tsx
+ create mode 100644 client/src/components/ui/badge.tsx
+ create mode 100644 client/src/components/ui/breadcrumb.tsx
+ create mode 100644 client/src/components/ui/button-section.tsx
+ create mode 100644 client/src/components/ui/button.tsx
+ create mode 100644 client/src/components/ui/calendar.tsx
+ create mode 100644 client/src/components/ui/card.tsx
+ create mode 100644 client/src/components/ui/carousel.tsx
+ create mode 100644 client/src/components/ui/chart.tsx
+ create mode 100644 client/src/components/ui/checkbox.tsx
+ create mode 100644 client/src/components/ui/collapsible.tsx
+ create mode 100644 client/src/components/ui/command.tsx
+ create mode 100644 client/src/components/ui/context-menu.tsx
+ create mode 100644 client/src/components/ui/dialog.tsx
+ create mode 100644 client/src/components/ui/drawer.tsx
+ create mode 100644 client/src/components/ui/dropdown-menu.tsx
+ create mode 100644 client/src/components/ui/form.tsx
+ create mode 100644 client/src/components/ui/hover-card.tsx
+ create mode 100644 client/src/components/ui/input-otp.tsx
+ create mode 100644 client/src/components/ui/input.tsx
+ create mode 100644 client/src/components/ui/label.tsx
+ create mode 100644 client/src/components/ui/menubar.tsx
+ create mode 100644 client/src/components/ui/navigation-menu.tsx
+ create mode 100644 client/src/components/ui/pagination.tsx
+ create mode 100644 client/src/components/ui/phone-input.tsx
+ create mode 100644 client/src/components/ui/popover.tsx
+ create mode 100644 client/src/components/ui/progress.tsx
+ create mode 100644 client/src/components/ui/radio-group.tsx
+ create mode 100644 client/src/components/ui/resizable.tsx
+ create mode 100644 client/src/components/ui/scroll-area.tsx
+ create mode 100644 client/src/components/ui/select.tsx
+ create mode 100644 client/src/components/ui/separator.tsx
+ create mode 100644 client/src/components/ui/sheet.tsx
+ create mode 100644 client/src/components/ui/sidebar.tsx
+ create mode 100644 client/src/components/ui/skeleton.tsx
+ create mode 100644 client/src/components/ui/slider.tsx
+ create mode 100644 client/src/components/ui/switch.tsx
+ create mode 100644 client/src/components/ui/table.tsx
+ create mode 100644 client/src/components/ui/tabs.tsx
+ create mode 100644 client/src/components/ui/textarea.tsx
+ create mode 100644 client/src/components/ui/toast.tsx
+ create mode 100644 client/src/components/ui/toaster.tsx
+ create mode 100644 client/src/components/ui/toggle-group.tsx
+ create mode 100644 client/src/components/ui/toggle.tsx
+ create mode 100644 client/src/components/ui/tooltip.tsx
+ create mode 100644 client/src/components/ui/use-toast.ts
+ create mode 100644 client/src/components/whatsapp/create-instance-dialog.tsx
+ create mode 100644 client/src/components/whatsapp/fetch-photos-dialog.tsx
+ create mode 100644 client/src/components/whatsapp/fetch-profile-dialog.tsx
+ create mode 100644 client/src/components/whatsapp/fetch-single-profile-dialog.tsx
+ create mode 100644 client/src/components/whatsapp/fetch-single-profile-picture.tsx
+ create mode 100644 client/src/components/whatsapp/instance-buttons.tsx
+ create mode 100644 client/src/components/whatsapp/qrcode-dialog.tsx
+ create mode 100644 client/src/components/whatsapp/send-message-dialog.tsx
+ create mode 100644 client/src/components/whatsapp/sequential-profile-pictures-dialog.fixed.tsx
+ create mode 100644 client/src/components/whatsapp/sequential-profile-pictures-dialog.tsx
+ create mode 100644 client/src/components/whatsapp/sequential-validation-dialog.tsx
+ create mode 100644 client/src/components/whatsapp/validate-numbers-dialog.tsx
+ create mode 100644 client/src/hooks/use-auth.tsx
+ create mode 100644 client/src/hooks/use-daily-content.ts
+ create mode 100644 client/src/hooks/use-dashboard-store.ts
+ create mode 100644 client/src/hooks/use-debounce.ts
+ create mode 100644 client/src/hooks/use-imoveis.ts
+ create mode 100644 client/src/hooks/use-local-storage.ts
+ create mode 100644 client/src/hooks/use-metas.ts
+ create mode 100644 client/src/hooks/use-mobile.tsx
+ create mode 100644 client/src/hooks/use-proprietarios.ts
+ create mode 100644 client/src/hooks/use-reports-store.ts
+ create mode 100644 client/src/hooks/use-toast.ts
+ create mode 100644 client/src/index.css
+ create mode 100644 client/src/lib/api.ts
+ create mode 100644 client/src/lib/appointment-utils.ts
+ create mode 100644 client/src/lib/date-utils.ts
+ create mode 100644 client/src/lib/formatters.ts
+ create mode 100644 client/src/lib/queryClient.ts
+ create mode 100644 client/src/lib/utils.ts
+ create mode 100644 client/src/main.tsx
+ create mode 100644 client/src/pages/login.tsx
+ create mode 100644 client/src/pages/modulos/central de atendimento/clientes-central.tsx
+ create mode 100644 client/src/pages/modulos/central de atendimento/dashboard-central.tsx
+ create mode 100644 client/src/pages/modulos/gestao/Metas.tsx
+ create mode 100644 client/src/pages/modulos/gestao/clientes.tsx
+ create mode 100644 client/src/pages/modulos/gestao/dashboard.tsx
+ create mode 100644 client/src/pages/modulos/gestao/facebook.tsx
+ create mode 100644 client/src/pages/modulos/gestao/leads.tsx
+ create mode 100644 client/src/pages/modulos/gestao/profile-tab.tsx
+ create mode 100644 client/src/pages/modulos/gestao/usuarios.tsx
+ create mode 100644 client/src/pages/modulos/gestao/webhook-footer-update.txt
+ create mode 100644 client/src/pages/modulos/gestao/webhook-implementation.tsx
+ create mode 100644 client/src/pages/modulos/gestao/whatsapp.tsx
+ create mode 100644 client/src/pages/modulos/marketing/clientes-marketing.tsx
+ create mode 100644 client/src/pages/modulos/marketing/dashboard-marketing.tsx
+ create mode 100644 client/src/pages/modulos/shared/Imoveis.tsx
+ create mode 100644 client/src/pages/modulos/shared/[id].tsx
+ create mode 100644 client/src/pages/modulos/shared/agenda.tsx
+ create mode 100644 client/src/pages/modulos/shared/cliente-details.tsx
+ create mode 100644 client/src/pages/modulos/shared/empreendimentos.tsx
+ create mode 100644 client/src/pages/modulos/shared/proprietarios.tsx
+ create mode 100644 client/src/pages/modulos/vendas/clientes-vendas.tsx
+ create mode 100644 client/src/pages/modulos/vendas/dashboard-vendas.tsx
+ create mode 100644 client/src/pages/not-found.tsx
+ create mode 100644 client/src/pages/reports.tsx
+ create mode 100644 client/src/services/geocoding.ts
+ create mode 100644 client/src/styles/carousel.css
+ create mode 100644 deploy.sh
+ create mode 100644 docker-compose.yml
+ create mode 100644 drizzle.config.ts
+ create mode 100644 ecosystem.config.js
+ create mode 100644 migrate-data-to-vps.sh
+ create mode 100644 package-lock.json
+ create mode 100644 package.json
+ create mode 100644 postcss.config.js
+ create mode 100644 prepare-database.sh
+ create mode 100644 production.env
+ create mode 100644 public/placeholder-user.png
+ create mode 100644 public/teste-apartamento.html
+ create mode 100644 server/constants/deprecatedFunctions.ts
+ create mode 100644 server/constants/errorMessages.ts
+ create mode 100644 server/database.ts
+ create mode 100644 server/direct-cascade-fix.ts
+ create mode 100644 server/index.ts
+ create mode 100644 server/middleware/auth.ts
+ create mode 100644 server/middleware/error-handler.ts
+ create mode 100644 server/middleware/mock-auth.ts
+ create mode 100644 server/middlewares/auth.ts
+ create mode 100644 server/migrate.ts
+ create mode 100644 server/migrations/20240320000000_create_metas_table.sql
+ create mode 100644 server/migrations/20240515000000_add_development_name_column.sql
+ create mode 100644 server/migrations/add-address-to-appointments.ts
+ create mode 100644 server/migrations/add-automacao-leads-table.ts
+ create mode 100644 server/migrations/add-broker-id-to-appointments.ts
+ create mode 100644 server/migrations/add-broker-id-to-clientes.ts
+ create mode 100644 server/migrations/add-cascade-delete-to-users.ts
+ create mode 100644 server/migrations/add-cascade-sla-config.ts
+ create mode 100644 server/migrations/add-cliente-notes-table.ts
+ create mode 100644 server/migrations/add-cliente-source-fields.ts
+ create mode 100644 server/migrations/add-cpf-to-clientes.ts
+ create mode 100644 server/migrations/add-development-name-to-sales.ts
+ create mode 100644 server/migrations/add-facebook-config-table.ts
+ create mode 100644 server/migrations/add-imoveis-fields.ts
+ create mode 100644 server/migrations/add-is-primary-to-whatsapp.ts
+ create mode 100644 server/migrations/add-profile-pic-to-clientes.ts
+ create mode 100644 server/migrations/add-recurring-lead-columns.ts
+ create mode 100644 server/migrations/add-sistema-leads-cascata-table.ts
+ create mode 100644 server/migrations/add-sistema-leads-table.ts
+ create mode 100644 server/migrations/add-updated-at-column.ts
+ create mode 100644 server/migrations/add-updated-at-to-visits.ts
+ create mode 100644 server/migrations/add-visit-detail-fields.ts
+ create mode 100644 server/migrations/add-whatsapp-remote-jid.ts
+ create mode 100644 server/migrations/add-whatsapp-tables.ts
+ create mode 100644 server/migrations/add_broker_assigned_to_columns.ts
+ create mode 100644 server/migrations/add_details_to_sales.ts
+ create mode 100644 server/migrations/index.ts
+ create mode 100644 server/migrations/remove-enrichment-columns.ts
+ create mode 100644 server/migrations/remove-more-automation-columns.ts
+ create mode 100644 server/migrations/remove-unused-columns-from-automation.ts
+ create mode 100644 server/migrations/remove-whatsapp-columns.ts
+ create mode 100644 server/migrations/rename-leads-to-clientes.ts
+ create mode 100644 server/migrations/update-schema-structure.ts
+ create mode 100644 server/models/apartamentos-schema.ts
+ create mode 100644 server/models/apartamentos.ts
+ create mode 100644 server/models/daily-content.ts
+ create mode 100644 server/models/empreendimentos-schema.ts
+ create mode 100644 server/models/empreendimentos.ts
+ create mode 100644 server/models/imoveis-novo.ts
+ create mode 100644 server/models/imoveis-schema.ts
+ create mode 100644 server/models/imoveis.ts
+ create mode 100644 server/models/proprietarios.ts
+ create mode 100644 server/models/sistema_users_horarios.ts
+ create mode 100644 server/performance-metrics.ts
+ create mode 100644 server/pg-storage.ts
+ create mode 100644 server/remove-leads-table.ts
+ create mode 100644 server/routes.ts
+ create mode 100644 server/routes/admin-users.ts
+ create mode 100644 server/routes/apartamentos-novo.ts
+ create mode 100644 server/routes/apartamentos.ts
+ create mode 100644 server/routes/appointments.ts
+ create mode 100644 server/routes/auth.ts
+ create mode 100644 server/routes/automation.ts
+ create mode 100644 server/routes/clientes.ts
+ create mode 100644 server/routes/dashboard.ts
+ create mode 100644 server/routes/empreendimentos-page.ts
+ create mode 100644 server/routes/empreendimentos.ts
+ create mode 100644 server/routes/facebook.ts
+ create mode 100644 server/routes/horarios-usuario.ts
+ create mode 100644 server/routes/image-upload.ts
+ create mode 100644 server/routes/imoveis-novo.ts
+ create mode 100644 server/routes/imoveis.ts
+ create mode 100644 server/routes/leads.ts
+ create mode 100644 server/routes/metas-register.ts
+ create mode 100644 server/routes/metas.ts
+ create mode 100644 server/routes/openai.ts
+ create mode 100644 server/routes/proprietarios.ts
+ create mode 100644 server/routes/sequential-validation.ts
+ create mode 100644 server/routes/sla-cascata.ts
+ create mode 100644 server/routes/test-lead-distribution.ts
+ create mode 100644 server/routes/uploads.ts
+ create mode 100644 server/routes/users.ts
+ create mode 100644 server/routes/whatsapp.ts
+ create mode 100644 server/routes/whatsapp.ts.bak
+ create mode 100644 server/run-add-recurring-lead-columns.ts
+ create mode 100644 server/run-automacao-leads-migration.ts
+ create mode 100644 server/run-broker-assigned-to-columns.ts
+ create mode 100644 server/run-cascade-migration.ts
+ create mode 100644 server/run-cliente-fields-migration.ts
+ create mode 100644 server/run-cliente-notes-migration.ts
+ create mode 100644 server/run-development-name-migration.ts
+ create mode 100644 server/run-direct-migration.ts
+ create mode 100644 server/run-migrations.ts
+ create mode 100644 server/services/api-queue.ts
+ create mode 100644 server/services/automation-config.service.ts
+ create mode 100644 server/services/facebook-lead.service.ts
+ create mode 100644 server/services/facebook-subscription.service.ts
+ create mode 100644 server/services/image-upload.ts
+ create mode 100644 server/services/lead-automation.service.ts
+ create mode 100644 server/services/lead-automation.service.ts.bak
+ create mode 100644 server/services/metas.service.ts
+ create mode 100644 server/services/openai.service.ts
+ create mode 100644 server/services/sequential-validation.ts
+ create mode 100644 server/services/sla-cascata-simple.service.ts
+ create mode 100644 server/services/whatsapp-api.ts
+ create mode 100644 server/services/whatsapp-profile-pic.ts
+ create mode 100644 server/services/whatsapp-validation.ts
+ create mode 100644 server/set-null-fix.ts
+ create mode 100644 server/storage.ts
+ create mode 100644 server/utils.ts
+ create mode 100644 server/utils/cache.ts
+ create mode 100644 server/utils/date-utils.ts
+ create mode 100644 server/utils/index.ts
+ create mode 100644 server/utils/logger.ts
+ create mode 100644 server/utils/performance-cache.ts
+ create mode 100644 server/utils/test-number.ts
+ create mode 100644 server/utils/validators.ts
+ create mode 100644 server/vite.ts
+ create mode 100644 setup-vps.sh
+ create mode 100644 shared/schema.ts
+ create mode 100644 tailwind.config.ts
+ create mode 100644 tsconfig.json
+ create mode 100644 vite.config.ts
+ create mode 100644 vitest.config.ts
+~/workspace$ git push origin main --force
+Enumerating objects: 326, done.
+Counting objects: 100% (326/326), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (319/319), done.
+Writing objects: 100% (326/326), 698.55 KiB | 5.37 MiB/s, done.
+Total 326 (delta 24), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (24/24), done.
+To https://github.com/renatinhosfaria/famaapp.git
+ + 0733da5...cd69748 main -> main (forced update)
+~/workspace$ 

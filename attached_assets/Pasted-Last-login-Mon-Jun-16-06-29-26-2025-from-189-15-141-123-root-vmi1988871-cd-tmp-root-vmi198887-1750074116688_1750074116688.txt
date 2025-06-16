@@ -1,0 +1,90 @@
+Last login: Mon Jun 16 06:29:26 2025 from 189.15.141.123
+root@vmi1988871:~# cd /tmp
+root@vmi1988871:/tmp# rm -rf fama-source
+root@vmi1988871:/tmp# git clone https://github.com/renatinhosfaria/famaapp.git fama-source
+Cloning into 'fama-source'...
+remote: Enumerating objects: 338, done.
+remote: Counting objects: 100% (197/197), done.
+remote: Compressing objects: 100% (187/187), done.
+remote: Total 338 (delta 14), reused 123 (delta 9), pack-reused 141 (from 1)
+Receiving objects: 100% (338/338), 703.23 KiB | 2.70 MiB/s, done.
+Resolving deltas: 100% (20/20), done.
+root@vmi1988871:/tmp# ls -la fama-source/
+total 672
+drwxr-xr-x  8 root root   4096 Jun 16 06:41 .
+drwxrwxrwt 13 root root   4096 Jun 16 06:41 ..
+-rw-r--r--  1 root root   3752 Jun 16 06:41 backup-script.sh
+drwxr-xr-x  3 root root   4096 Jun 16 06:41 client
+-rw-r--r--  1 root root   5767 Jun 16 06:41 DEPLOY-INSTRUCTIONS.md
+-rw-r--r--  1 root root   1415 Jun 16 06:41 DEPLOY-QUICK-GUIDE.md
+-rw-r--r--  1 root root   4935 Jun 16 06:41 deploy.sh
+-rw-r--r--  1 root root   2203 Jun 16 06:41 DEPLOY-SUMMARY.md
+-rw-r--r--  1 root root   2475 Jun 16 06:41 docker-compose.yml
+-rw-r--r--  1 root root   1352 Jun 16 06:41 Dockerfile
+-rw-r--r--  1 root root    325 Jun 16 06:41 drizzle.config.ts
+-rw-r--r--  1 root root    684 Jun 16 06:41 ecosystem.config.js
+-rw-r--r--  1 root root    722 Jun 16 06:41 .eslintrc.json
+drwxr-xr-x  8 root root   4096 Jun 16 06:41 .git
+drwxr-xr-x  3 root root   4096 Jun 16 06:41 .github
+-rw-r--r--  1 root root    106 Jun 16 06:41 .gitignore
+-rw-r--r--  1 root root   4477 Jun 16 06:41 migrate-data-to-vps.sh
+-rw-r--r--  1 root root   3682 Jun 16 06:41 nginx-fama-sistema.conf
+-rw-r--r--  1 root root   4685 Jun 16 06:41 package.json
+-rw-r--r--  1 root root 509197 Jun 16 06:41 package-lock.json
+-rw-r--r--  1 root root  11258 Jun 16 06:41 PASSO-A-PASSO-DEPLOY.md
+-rw-r--r--  1 root root     80 Jun 16 06:41 postcss.config.js
+-rw-r--r--  1 root root   3252 Jun 16 06:41 prepare-database.sh
+-rw-r--r--  1 root root   3856 Jun 16 06:41 production.env
+drwxr-xr-x  2 root root   4096 Jun 16 06:41 public
+-rw-r--r--  1 root root   2488 Jun 16 06:41 README.md
+-rw-r--r--  1 root root    104 Jun 16 06:41 replit.nix
+-rw-r--r--  1 root root   2426 Jun 16 06:41 run.mjs
+drwxr-xr-x 10 root root   4096 Jun 16 06:41 server
+-rw-r--r--  1 root root   7007 Jun 16 06:41 setup-vps.sh
+drwxr-xr-x  2 root root   4096 Jun 16 06:41 shared
+-rw-r--r--  1 root root   2963 Jun 16 06:41 tailwind.config.ts
+-rw-r--r--  1 root root     99 Jun 16 06:41 theme.json
+-rw-r--r--  1 root root   1131 Jun 16 06:41 traefik-example.yml
+-rw-r--r--  1 root root    657 Jun 16 06:41 tsconfig.json
+-rw-r--r--  1 root root   1069 Jun 16 06:41 vite.config.ts
+-rw-r--r--  1 root root    334 Jun 16 06:41 vitest.config.ts
+root@vmi1988871:/tmp# ls -la fama-source/client/
+total 16
+drwxr-xr-x 3 root root 4096 Jun 16 06:41 .
+drwxr-xr-x 8 root root 4096 Jun 16 06:41 ..
+-rw-r--r-- 1 root root  795 Jun 16 06:41 index.html
+drwxr-xr-x 8 root root 4096 Jun 16 06:41 src
+root@vmi1988871:/tmp# ls -la fama-source/server/
+total 308
+drwxr-xr-x 10 root root  4096 Jun 16 06:41 .
+drwxr-xr-x  8 root root  4096 Jun 16 06:41 ..
+drwxr-xr-x  2 root root  4096 Jun 16 06:41 constants
+-rw-r--r--  1 root root  2494 Jun 16 06:41 database.ts
+-rw-r--r--  1 root root  2684 Jun 16 06:41 direct-cascade-fix.ts
+-rw-r--r--  1 root root  9159 Jun 16 06:41 index.ts
+drwxr-xr-x  2 root root  4096 Jun 16 06:41 middleware
+drwxr-xr-x  2 root root  4096 Jun 16 06:41 middlewares
+-rw-r--r--  1 root root 23877 Jun 16 06:41 migrate.ts
+drwxr-xr-x  2 root root  4096 Jun 16 06:41 migrations
+drwxr-xr-x  2 root root  4096 Jun 16 06:41 models
+-rw-r--r--  1 root root  4621 Jun 16 06:41 performance-metrics.ts
+-rw-r--r--  1 root root 94491 Jun 16 06:41 pg-storage.ts
+-rw-r--r--  1 root root  1448 Jun 16 06:41 remove-leads-table.ts
+drwxr-xr-x  2 root root  4096 Jun 16 06:41 routes
+-rw-r--r--  1 root root  5913 Jun 16 06:41 routes.ts
+-rw-r--r--  1 root root   480 Jun 16 06:41 run-add-recurring-lead-columns.ts
+-rw-r--r--  1 root root  1329 Jun 16 06:41 run-automacao-leads-migration.ts
+-rw-r--r--  1 root root   716 Jun 16 06:41 run-broker-assigned-to-columns.ts
+-rw-r--r--  1 root root  3163 Jun 16 06:41 run-cascade-migration.ts
+-rw-r--r--  1 root root   491 Jun 16 06:41 run-cliente-fields-migration.ts
+-rw-r--r--  1 root root   869 Jun 16 06:41 run-cliente-notes-migration.ts
+-rw-r--r--  1 root root  1030 Jun 16 06:41 run-development-name-migration.ts
+-rw-r--r--  1 root root  3950 Jun 16 06:41 run-direct-migration.ts
+-rw-r--r--  1 root root  1168 Jun 16 06:41 run-migrations.ts
+drwxr-xr-x  2 root root  4096 Jun 16 06:41 services
+-rw-r--r--  1 root root  2485 Jun 16 06:41 set-null-fix.ts
+-rw-r--r--  1 root root 53281 Jun 16 06:41 storage.ts
+drwxr-xr-x  2 root root  4096 Jun 16 06:41 utils
+-rw-r--r--  1 root root  5274 Jun 16 06:41 utils.ts
+-rw-r--r--  1 root root  2374 Jun 16 06:41 vite.ts
+root@vmi1988871:/tmp#

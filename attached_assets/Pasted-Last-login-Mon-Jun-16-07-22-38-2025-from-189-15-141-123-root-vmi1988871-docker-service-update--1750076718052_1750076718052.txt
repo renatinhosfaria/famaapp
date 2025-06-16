@@ -1,0 +1,56 @@
+Last login: Mon Jun 16 07:22:38 2025 from 189.15.141.123
+root@vmi1988871:~# docker service update --image node:18-alpine fama-sistema_app
+fama-sistema_app
+overall progress: 1 out of 1 tasks
+1/1: running
+verify: Service fama-sistema_app converged
+root@vmi1988871:~# docker service update --args "sh -c 'npm install -g tsx && tsx server/index.ts'" fama-sistema_app
+fama-sistema_app
+overall progress: 1 out of 1 tasks
+1/1: running
+verify: Service fama-sistema_app converged
+root@vmi1988871:~# docker service logs fama-sistema_app --tail 20
+fama-sistema_app.1.6cu9jgcpbs9f@vmi1988871.contaboserver.net    | FAMA Sistema running on port 3000
+fama-sistema_app.1.l62ax9bduuem@vmi1988871.contaboserver.net    |
+fama-sistema_app.1.l62ax9bduuem@vmi1988871.contaboserver.net    | up to date, audited 658 packages in 14s
+fama-sistema_app.1.l62ax9bduuem@vmi1988871.contaboserver.net    |
+fama-sistema_app.1.l62ax9bduuem@vmi1988871.contaboserver.net    | 76 packages are looking for funding
+fama-sistema_app.1.l62ax9bduuem@vmi1988871.contaboserver.net    |   run `npm fund` for details
+fama-sistema_app.1.l62ax9bduuem@vmi1988871.contaboserver.net    |
+fama-sistema_app.1.l62ax9bduuem@vmi1988871.contaboserver.net    | 4 vulnerabilities (2 low, 2 moderate)
+fama-sistema_app.1.l62ax9bduuem@vmi1988871.contaboserver.net    |
+fama-sistema_app.1.l62ax9bduuem@vmi1988871.contaboserver.net    | To address all issues, run:
+fama-sistema_app.1.l62ax9bduuem@vmi1988871.contaboserver.net    |   npm audit fix
+fama-sistema_app.1.l62ax9bduuem@vmi1988871.contaboserver.net    |
+fama-sistema_app.1.l62ax9bduuem@vmi1988871.contaboserver.net    | Run `npm audit` for details.
+fama-sistema_app.1.l62ax9bduuem@vmi1988871.contaboserver.net    | npm notice
+fama-sistema_app.1.l62ax9bduuem@vmi1988871.contaboserver.net    | npm notice New major version of npm available! 10.8.2 -> 11.4.2
+fama-sistema_app.1.l62ax9bduuem@vmi1988871.contaboserver.net    | npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.4.2
+fama-sistema_app.1.l62ax9bduuem@vmi1988871.contaboserver.net    | npm notice To update run: npm install -g npm@11.4.2
+fama-sistema_app.1.l62ax9bduuem@vmi1988871.contaboserver.net    | npm notice
+fama-sistema_app.1.l62ax9bduuem@vmi1988871.contaboserver.net    | FAMA Sistema (Completo) running on port 3000
+fama-sistema_app.1.nwgs4dd9h1n8@vmi1988871.contaboserver.net    | FAMA Sistema running on port 3000
+fama-sistema_app.1.7kt4x17t6ez0@vmi1988871.contaboserver.net    |
+fama-sistema_app.1.7kt4x17t6ez0@vmi1988871.contaboserver.net    | up to date, audited 658 packages in 9s
+fama-sistema_app.1.7kt4x17t6ez0@vmi1988871.contaboserver.net    |
+fama-sistema_app.1.7kt4x17t6ez0@vmi1988871.contaboserver.net    | 76 packages are looking for funding
+fama-sistema_app.1.7kt4x17t6ez0@vmi1988871.contaboserver.net    |   run `npm fund` for details
+fama-sistema_app.1.7kt4x17t6ez0@vmi1988871.contaboserver.net    | npm notice
+fama-sistema_app.1.7kt4x17t6ez0@vmi1988871.contaboserver.net    | npm notice New major version of npm available! 10.8.2 -> 11.4.2
+fama-sistema_app.1.7kt4x17t6ez0@vmi1988871.contaboserver.net    | npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.4.2
+fama-sistema_app.1.7kt4x17t6ez0@vmi1988871.contaboserver.net    | npm notice To update run: npm install -g npm@11.4.2
+fama-sistema_app.1.7kt4x17t6ez0@vmi1988871.contaboserver.net    | npm notice
+fama-sistema_app.1.7kt4x17t6ez0@vmi1988871.contaboserver.net    |
+fama-sistema_app.1.7kt4x17t6ez0@vmi1988871.contaboserver.net    | 4 vulnerabilities (2 low, 2 moderate)
+fama-sistema_app.1.7kt4x17t6ez0@vmi1988871.contaboserver.net    |
+fama-sistema_app.1.7kt4x17t6ez0@vmi1988871.contaboserver.net    | To address all issues, run:
+fama-sistema_app.1.7kt4x17t6ez0@vmi1988871.contaboserver.net    |   npm audit fix
+fama-sistema_app.1.7kt4x17t6ez0@vmi1988871.contaboserver.net    |
+fama-sistema_app.1.7kt4x17t6ez0@vmi1988871.contaboserver.net    | Run `npm audit` for details.
+fama-sistema_app.1.7kt4x17t6ez0@vmi1988871.contaboserver.net    | FAMA Sistema (Completo) running on port 3000
+root@vmi1988871:~# sleep 20
+root@vmi1988871:~# curl https://famachat.com.br/api/health
+Bad Gatewayroot@vmi1988871:~# curl https://famachat.com.br/api/users
+
+Gateway Timeoutroot@vmi1988871:~#
+root@vmi1988871:~#

@@ -1,0 +1,84 @@
+~/workspace$ git add .
+~/workspace$ git commit -m "Initial commit - FAMA Sistema"
+[main 67d0b76] Initial commit - FAMA Sistema
+ 5 files changed, 140 insertions(+)
+ create mode 100644 attached_assets/Pasted-Last-login-Mon-Jun-16-06-14-28-2025-from-189-15-141-123-root-vmi1988871-docker-volume-create-vo-1750072742314_1750072742315.txt
+ create mode 100644 attached_assets/Pasted-Last-login-Mon-Jun-16-06-15-33-2025-from-189-15-141-123-root-vmi1988871-docker-service-logs-fam-1750072989946_1750072989947.txt
+ create mode 100644 attached_assets/image_1750072872687.png
+ create mode 100644 attached_assets/image_1750073001546.png
+ create mode 100644 attached_assets/image_1750073009320.png
+~/workspace$ git push origin main
+Enumerating objects: 2068, done.
+Counting objects: 100% (2068/2068), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (1953/1953), done.
+Writing objects: 100% (1965/1965), 236.28 MiB | 4.72 MiB/s, done.
+Total 1965 (delta 1264), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1264/1264), completed with 86 local objects.
+remote: warning: File zid2CAeL is 70.90 MB; this is larger than GitHub's recommended maximum file size of 50.00 MB
+remote: error: Trace: 6f0e519746d28a15098587637120de2150b291ff71e9ee6899ba98e56bc98bd7
+remote: error: See https://gh.io/lfs for more information.
+remote: error: File zih3broi is 130.08 MB; this exceeds GitHub's file size limit of 100.00 MB
+remote: error: GH001: Large files detected. You may want to try Git Large File Storage - https://git-lfs.github.com.
+To https://github.com/renatinhosfaria/famaapp.git
+ ! [remote rejected] main -> main (pre-receive hook declined)
+error: failed to push some refs to 'https://github.com/renatinhosfaria/famaapp.git'
+~/workspace$ ^C
+~/workspace$ git reset --soft HEAD~1
+~/workspace$ ^[[200~git rm --cached uploads/*
+git rm --cached uploads/*bash: git: command not found
+~/workspace$ ~ git rm --cached node_modules/* 2>/dev/null || true
+~/workspace$ cat > .gitignore << 'EOF'
+node_modules/
+uploads/
+.env
+*.log
+dist/
+build/
+.DS_Store
+attached_assets/
+*.tmp
+EOF
+~/workspace$ git add .gitignore
+git add client/
+git add server/
+git add shared/
+git add public/
+git add package.json
+git add package-lock.json
+git add *.ts *.js *.json *.md
+git add docker-compose.yml
+git add Dockerfile
+git add production.env
+git add *.sh
+~/workspace$ git commit -m "Initial commit - FAMA Sistema (arquivos essenciais)"
+[main 127cd10] Initial commit - FAMA Sistema (arquivos essenciais)
+ 6 files changed, 149 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 attached_assets/Pasted-Last-login-Mon-Jun-16-06-14-28-2025-from-189-15-141-123-root-vmi1988871-docker-volume-create-vo-1750072742314_1750072742315.txt
+ create mode 100644 attached_assets/Pasted-Last-login-Mon-Jun-16-06-15-33-2025-from-189-15-141-123-root-vmi1988871-docker-service-logs-fam-1750072989946_1750072989947.txt
+ create mode 100644 attached_assets/image_1750072872687.png
+ create mode 100644 attached_assets/image_1750073001546.png
+ create mode 100644 attached_assets/image_1750073009320.png
+~/workspace$ git push origin main
+Enumerating objects: 2069, done.
+Counting objects: 100% (2069/2069), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (1954/1954), done.
+Writing objects: 100% (1966/1966), 236.27 MiB | 5.05 MiB/s, done.
+Total 1966 (delta 1265), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1265/1265), completed with 86 local objects.
+remote: warning: File zid2CAeL is 70.90 MB; this is larger than GitHub's recommended maximum file size of 50.00 MB
+remote: error: Trace: 70cb61017680e8a70bd32325f8d615bfa6d1fd9f98ae4cd579a01c5082694788
+remote: error: See https://gh.io/lfs for more information.
+remote: error: File zih3broi is 130.08 MB; this exceeds GitHub's file size limit of 100.00 MB
+remote: error: GH001: Large files detected. You may want to try Git Large File Storage - https://git-lfs.github.com.
+To https://github.com/renatinhosfaria/famaapp.git
+ ! [remote rejected] main -> main (pre-receive hook declined)
+error: failed to push some refs to 'https://github.com/renatinhosfaria/famaapp.git'
+~/workspace$ find . -size +50M -not -path "./node_modules/*" -not -path "./.git/*"
+./.config/.vscode-server/cli/servers/Stable-17baf841131aa23349f217ca7c570c76ee87b957/server/node
+./.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/node
+./.config/.vscode-server/cli/servers/Stable-258e40fedc6cb8edf399a463ce3a9d32e7e1f6f3/server/node
+./.config/.vscode-server/cli/servers/Stable-dfaf44141ea9deb3b4096f7cd6d24e00c147a4b1/server/node
+~/workspace$ 

@@ -1,0 +1,29 @@
+Last login: Mon Jun 16 07:09:55 2025 from 189.15.141.123
+root@vmi1988871:~# docker service inspect fama-sistema_app --format '{{range .Spec.TaskTemplate.Networks}}{{.Target}} {{end}}'
+x4v2443w3do1p0wfpivu49mth
+root@vmi1988871:~# docker service logs fama-sistema_app --tail 10
+fama-sistema_app.1.oegs56zem50b@vmi1988871.contaboserver.net    | To address all issues, run:
+fama-sistema_app.1.l62ax9bduuem@vmi1988871.contaboserver.net    | To address all issues, run:
+fama-sistema_app.1.oegs56zem50b@vmi1988871.contaboserver.net    |   npm audit fix
+fama-sistema_app.1.l62ax9bduuem@vmi1988871.contaboserver.net    |   npm audit fix
+fama-sistema_app.1.l62ax9bduuem@vmi1988871.contaboserver.net    |
+fama-sistema_app.1.oegs56zem50b@vmi1988871.contaboserver.net    |
+fama-sistema_app.1.l62ax9bduuem@vmi1988871.contaboserver.net    | Run `npm audit` for details.
+fama-sistema_app.1.oegs56zem50b@vmi1988871.contaboserver.net    | Run `npm audit` for details.
+fama-sistema_app.1.l62ax9bduuem@vmi1988871.contaboserver.net    | npm notice
+fama-sistema_app.1.oegs56zem50b@vmi1988871.contaboserver.net    | npm notice
+fama-sistema_app.1.oegs56zem50b@vmi1988871.contaboserver.net    | npm notice New major version of npm available! 10.8.2 -> 11.4.2
+fama-sistema_app.1.l62ax9bduuem@vmi1988871.contaboserver.net    | npm notice New major version of npm available! 10.8.2 -> 11.4.2
+fama-sistema_app.1.oegs56zem50b@vmi1988871.contaboserver.net    | npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.4.2
+fama-sistema_app.1.l62ax9bduuem@vmi1988871.contaboserver.net    | npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.4.2
+fama-sistema_app.1.oegs56zem50b@vmi1988871.contaboserver.net    | npm notice To update run: npm install -g npm@11.4.2
+fama-sistema_app.1.l62ax9bduuem@vmi1988871.contaboserver.net    | npm notice To update run: npm install -g npm@11.4.2
+fama-sistema_app.1.oegs56zem50b@vmi1988871.contaboserver.net    | npm notice
+fama-sistema_app.1.l62ax9bduuem@vmi1988871.contaboserver.net    | npm notice
+fama-sistema_app.1.l62ax9bduuem@vmi1988871.contaboserver.net    | FAMA Sistema (Completo) running on port 3000
+fama-sistema_app.1.oegs56zem50b@vmi1988871.contaboserver.net    | FAMA Sistema (Completo) running on port 3000
+root@vmi1988871:~# docker service ps fama-sistema_app
+ID             NAME                     IMAGE            NODE                           DESIRED STATE   CURRENT STATE            ERROR     PORTS
+l62ax9bduuem   fama-sistema_app.1       node:20-alpine   vmi1988871.contaboserver.net   Running         Running 2 minutes ago
+oegs56zem50b    \_ fama-sistema_app.1   node:20-alpine   vmi1988871.contaboserver.net   Shutdown        Shutdown 2 minutes ago
+root@vmi1988871:~#

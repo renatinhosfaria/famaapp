@@ -1,0 +1,16 @@
+BACKUP FAMA SISTEMA
+==================
+Data: 2025-06-16 12:47:23
+Diretório original: /home/runner/workspace
+
+ARQUIVOS INCLUÍDOS:
+- Código fonte completo (client, server, shared)
+- Arquivos de configuração
+- Scripts de deploy
+- Documentação
+
+PARA RESTAURAR:
+1. Extrair arquivos
+2. npm install
+3. Configurar variáveis de ambiente
+4. npm run dev

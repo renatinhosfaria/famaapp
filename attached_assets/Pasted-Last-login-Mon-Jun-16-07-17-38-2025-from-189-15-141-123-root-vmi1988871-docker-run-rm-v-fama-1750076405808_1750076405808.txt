@@ -1,0 +1,102 @@
+Last login: Mon Jun 16 07:17:38 2025 from 189.15.141.123
+root@vmi1988871:~# docker run --rm -v fama-sistema_fama-source:/app alpine sh -c "
+> cat > /app/server-production.mjs << 'EOF'
+> import express from 'express';
+> import path from 'path';
+> import { fileURLToPath } from 'url';
+> const __filename = fileURLToPath(import.meta.url);
+> const __dirname = path.dirname(__filename);
+> const app = express();
+> const port = process.env.PORT || 3000;
+> // Middleware
+> app.use(express.json({ limit: '50mb' }));
+> app.use(express.urlencoded({ extended: true, limit: '50mb' }));
+> // CORS
+> app.use((req, res, next) => {
+>   res.header('Access-Control-Allow-Origin', '*');
+>   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+>   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+>   if (req.method === 'OPTIONS') {
+>     res.sendStatus(200);
+>   } else {
+>     next();
+>   }
+> });
+> // Serve static files
+> app.use(express.static('public'));
+> app.use('/uploads', express.static('uploads'));
+> // Health check
+> app.get('/api/health', (req, res) => {
+>   res.json({
+>     status: 'healthy',
+>     timestamp: new Date().toISOString(),
+>     uptime: process.uptime(),
+>     environment: 'production',
+>     database: process.env.DATABASE_URL ? 'connected' : 'not configured'
+>   });
+> });
+> // API placeholder routes
+> app.get('/api/users', (req, res) => {
+>   res.json({ message: 'Users API endpoint', data: [] });
+> });
+> app.get('/api/clientes', (req, res) => {
+>   res.json({ message: 'Clientes API endpoint', data: [] });
+> });
+> // Serve React app
+> app.get('/', (req, res) => {
+>   res.send(\`
+> <!DOCTYPE html>
+-bash: !DOCTYPE: event not found
+> <html lang="pt-BR">
+> <head>
+>     <meta charset="UTF-8">
+>     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+>     <title>FAMA Sistema</title>
+>     <style>
+>         body { font-family: Arial, sans-serif; margin: 40px; background: #f5f5f5; }
+>         .container { max-width: 800px; margin: 0 auto; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+>         h1 { color: #2c3e50; margin-bottom: 20px; }
+>         .status { background: #e8f5e8; padding: 15px; border-radius: 4px; margin: 20px 0; }
+>         .api-link { display: inline-block; margin: 5px 10px 5px 0; padding: 8px 15px; background: #3498db; color: white; text-decoration: none; border-radius: 4px; }
+>         .api-link:hover { background: #2980b9; }
+>     </style>
+> </head>
+> <body>
+>     <div class="container">
+>         <h1>🏢 FAMA Sistema</h1>
+>         <div class="status">
+>             <strong>Status:</strong> Sistema em produção e funcionando<br>
+>             <strong>Versão:</strong> 2.0.0<br>
+>             <strong>Ambiente:</strong> Production<br>
+>             <strong>Banco:</strong> PostgreSQL Conectado
+>         </div>
+>
+>         <h3>APIs Disponíveis:</h3>
+>         <a href="/api/health" class="api-link">Health Check</a>
+>         <a href="/api/users" class="api-link">Usuários</a>
+>         <a href="/api/clientes" class="api-link">Clientes</a>
+>
+>         <h3>Próximos Passos:</h3>
+>         <ul>
+>             <li>✅ Infraestrutura Docker + Traefik configurada</li>
+>             <li>✅ SSL automático funcionando</li>
+>             <li>✅ PostgreSQL conectado</li>
+>             <li>🔄 Frontend React em integração</li>
+>             <li>🔄 APIs backend em desenvolvimento</li>
+>         </ul>
+>     </div>
+> </body>
+> </html>
+>   \`);
+> });
+> // Catch all for React SPA
+> app.get('*', (req, res) => {
+>   res.redirect('/');
+> });
+> app.listen(port, '0.0.0.0', () => {
+>   console.log(\`FAMA Sistema (Production) running on port \${port}\`);
+>   console.log(\`Database: \${process.env.DATABASE_URL ? 'Connected' : 'Not configured'}\`);
+> });
+> EOF
+> "
+root@vmi1988871:~#
