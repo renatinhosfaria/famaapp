@@ -1,0 +1,12 @@
+node_modules/
+uploads/
+.env
+*.log
+dist/
+build/
+.DS_Store
+attached_assets/
+*.tmp
+.config/
+.cache/
+.replit*
